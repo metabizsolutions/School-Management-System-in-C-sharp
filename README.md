@@ -1,1 +1,0 @@
-# School-Management-System-in-C-sharp

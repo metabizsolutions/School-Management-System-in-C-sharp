@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{E3508953-FA5D-4327-A2C0-ABE397B2D081}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="About/ABoustTNSBAY.cs">
+    <Files>
+      <File FileName="About/ABoustTNSBAY.cs" Line="22" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SchoolManagementSystem" expanded="True">
+            <Node name="SchoolManagementSystem" expanded="True">
+              <Node name="Packages" expanded="True" />
+              <Node name="About" expanded="True">
+                <Node name="ABoustTNSBAY.cs" selected="True" />
+              </Node>
+              <Node name="Exam" expanded="True">
+                <Node name="CheckList.cs" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace />
+</Properties>
