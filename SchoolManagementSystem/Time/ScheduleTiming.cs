@@ -50,8 +50,31 @@ namespace SchoolManagementSystem.Class
         public ScheduleTiming()
         {
             InitializeComponent();
+            InitializeTimePickerState();
             loadfunctions();
         }
+        private void ScheduleTiming_Load(object sender, EventArgs e)
+        {
+            InitializeTimePickerState(); // Call again to ensure it's set correctly when the form loads
+        }
+        private void InitializeTimePickerState()
+        {
+            // Set initial state based on checkboxes
+            timeSAS.Enabled = chkAssemblyTime.Checked;
+            timeEA.Enabled = chkAssemblyTime.Checked;
+            timeSB.Enabled = chkBreakTime.Checked;
+            timeEB.Enabled = chkBreakTime.Checked;
+
+            // If both checkboxes are unchecked, disable all time pickers
+            if (!chkAssemblyTime.Checked && !chkBreakTime.Checked)
+            {
+                timeSAS.Enabled = false;
+                timeEA.Enabled = false;
+                timeSB.Enabled = false;
+                timeEB.Enabled = false;
+            }
+        }
+
         public void loadfunctions()
         {
             allClass.Clear();
@@ -65,6 +88,8 @@ namespace SchoolManagementSystem.Class
             time_duration = Convert.ToInt32(fun.GetSettings("time_duration"));
             //Populate_Filter_Grid();
         }
+
+
         public void permissions_btns(bool add, bool Edit, bool Delete)
         {
             btnSave.Enabled = false;
@@ -674,6 +699,54 @@ namespace SchoolManagementSystem.Class
         {
             fun.loaderform(timetableList);
         }
+        private void chkAssemblyTime_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isChecked = chkAssemblyTime.Checked;
+
+            if (assemblyTimeLabel != null)
+                assemblyTimeLabel.Visible = isChecked;
+
+            if (assemblyTimePicker != null)
+                assemblyTimePicker.Visible = isChecked;
+
+            // Disable/Enable time pickers based on checkbox state
+            timeSAS.Enabled = isChecked;
+            timeEA.Enabled = isChecked;
+
+            DisableTimePickersIfBothUnchecked();
+        }
+
+        private void chkBreakTime_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isChecked = chkBreakTime.Checked;
+
+            if (breakTimeLabel != null)
+                breakTimeLabel.Visible = isChecked;
+
+            if (breakTimePicker != null)
+                breakTimePicker.Visible = isChecked;
+
+            // Disable/Enable time pickers based on checkbox state
+            timeSB.Enabled = isChecked;
+            timeEB.Enabled = isChecked;
+
+            DisableTimePickersIfBothUnchecked();
+        }
+
+        private void DisableTimePickersIfBothUnchecked()
+        {
+            // If both checkboxes are unchecked, disable all relevant time pickers
+            if (!chkAssemblyTime.Checked && !chkBreakTime.Checked)
+            {
+                timeSAS.Enabled = false;
+                timeEA.Enabled = false;
+                timeSB.Enabled = false;
+                timeEB.Enabled = false;
+            }
+        }
+
+
+
     }
 
 }

@@ -84,6 +84,8 @@ namespace SchoolManagementSystem.Class
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.chkAssemblyTime = new System.Windows.Forms.CheckBox();
+            this.chkBreakTime = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridDays.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridSection.Properties)).BeginInit();
@@ -117,6 +119,8 @@ namespace SchoolManagementSystem.Class
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkBreakTime);
+            this.groupBox1.Controls.Add(this.chkAssemblyTime);
             this.groupBox1.Controls.Add(this.btnFillSlots);
             this.groupBox1.Controls.Add(this.GridDays);
             this.groupBox1.Controls.Add(this.GridSection);
@@ -148,6 +152,9 @@ namespace SchoolManagementSystem.Class
             // 
             this.GridDays.Location = new System.Drawing.Point(147, 38);
             this.GridDays.Name = "GridDays";
+            // 
+            // 
+            // 
             this.GridDays.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.GridDays.Size = new System.Drawing.Size(143, 20);
@@ -158,6 +165,9 @@ namespace SchoolManagementSystem.Class
             // 
             this.GridSection.Location = new System.Drawing.Point(8, 39);
             this.GridSection.Name = "GridSection";
+            // 
+            // 
+            // 
             this.GridSection.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.GridSection.Size = new System.Drawing.Size(133, 20);
@@ -168,7 +178,7 @@ namespace SchoolManagementSystem.Class
             // 
             this.labelControl1.Location = new System.Drawing.Point(8, 20);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(67, 13);
+            this.labelControl1.Size = new System.Drawing.Size(69, 13);
             this.labelControl1.TabIndex = 77;
             this.labelControl1.Text = "Select Section";
             this.labelControl1.Visible = false;
@@ -198,7 +208,6 @@ namespace SchoolManagementSystem.Class
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
             this.btnPrint.Location = new System.Drawing.Point(296, 36);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 74;
             this.btnPrint.Text = "Search";
             this.btnPrint.Visible = false;
@@ -210,7 +219,7 @@ namespace SchoolManagementSystem.Class
             this.gridControl1.Location = new System.Drawing.Point(0, 86);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(911, 383);
+            this.gridControl1.Size = new System.Drawing.Size(1146, 383);
             this.gridControl1.TabIndex = 70;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -261,6 +270,9 @@ namespace SchoolManagementSystem.Class
             // 
             this.GridSubject.Location = new System.Drawing.Point(7, 204);
             this.GridSubject.Name = "GridSubject";
+            // 
+            // 
+            // 
             this.GridSubject.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.GridSubject.Properties.PopupView = this.gridLookUpEdit1View;
@@ -328,6 +340,9 @@ namespace SchoolManagementSystem.Class
             // 
             this.GridTeacher.Location = new System.Drawing.Point(7, 244);
             this.GridTeacher.Name = "GridTeacher";
+            // 
+            // 
+            // 
             this.GridTeacher.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.GridTeacher.Properties.PopupView = this.gridView3;
@@ -389,7 +404,7 @@ namespace SchoolManagementSystem.Class
             this.layoutControlItem1.Size = new System.Drawing.Size(225, 40);
             this.layoutControlItem1.Text = "Class";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(40, 13);
             // 
             // layoutControlItem13
             // 
@@ -400,7 +415,7 @@ namespace SchoolManagementSystem.Class
             this.layoutControlItem13.Size = new System.Drawing.Size(225, 40);
             this.layoutControlItem13.Text = "Section";
             this.layoutControlItem13.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(40, 13);
             // 
             // layoutControlItem14
             // 
@@ -411,7 +426,7 @@ namespace SchoolManagementSystem.Class
             this.layoutControlItem14.Size = new System.Drawing.Size(225, 40);
             this.layoutControlItem14.Text = "Day";
             this.layoutControlItem14.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(40, 13);
             // 
             // Subject
             // 
@@ -421,7 +436,7 @@ namespace SchoolManagementSystem.Class
             this.Subject.Name = "Subject";
             this.Subject.Size = new System.Drawing.Size(225, 40);
             this.Subject.TextLocation = DevExpress.Utils.Locations.Top;
-            this.Subject.TextSize = new System.Drawing.Size(39, 13);
+            this.Subject.TextSize = new System.Drawing.Size(40, 13);
             // 
             // Teacher
             // 
@@ -431,7 +446,7 @@ namespace SchoolManagementSystem.Class
             this.Teacher.Name = "Teacher";
             this.Teacher.Size = new System.Drawing.Size(225, 40);
             this.Teacher.TextLocation = DevExpress.Utils.Locations.Top;
-            this.Teacher.TextSize = new System.Drawing.Size(39, 13);
+            this.Teacher.TextSize = new System.Drawing.Size(40, 13);
             // 
             // layoutControlItem12
             // 
@@ -442,7 +457,7 @@ namespace SchoolManagementSystem.Class
             this.layoutControlItem12.Size = new System.Drawing.Size(225, 40);
             this.layoutControlItem12.Text = "Room#";
             this.layoutControlItem12.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(40, 13);
             // 
             // layoutControlItem11
             // 
@@ -457,6 +472,7 @@ namespace SchoolManagementSystem.Class
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.btnDelete;
+            this.layoutControlItem15.Enabled = false;
             this.layoutControlItem15.Location = new System.Drawing.Point(112, 280);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(113, 72);
@@ -466,6 +482,7 @@ namespace SchoolManagementSystem.Class
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnSave;
+            this.layoutControlItem10.Enabled = false;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 240);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(225, 40);
@@ -518,7 +535,7 @@ namespace SchoolManagementSystem.Class
             this.timeEB.Location = new System.Drawing.Point(332, 27);
             this.timeEB.Name = "timeEB";
             this.timeEB.ShowUpDown = true;
-            this.timeEB.Size = new System.Drawing.Size(100, 21);
+            this.timeEB.Size = new System.Drawing.Size(100, 20);
             this.timeEB.TabIndex = 70;
             // 
             // timeSB
@@ -528,7 +545,7 @@ namespace SchoolManagementSystem.Class
             this.timeSB.Location = new System.Drawing.Point(104, 28);
             this.timeSB.Name = "timeSB";
             this.timeSB.ShowUpDown = true;
-            this.timeSB.Size = new System.Drawing.Size(100, 21);
+            this.timeSB.Size = new System.Drawing.Size(100, 20);
             this.timeSB.TabIndex = 70;
             // 
             // timeEA
@@ -538,7 +555,7 @@ namespace SchoolManagementSystem.Class
             this.timeEA.Location = new System.Drawing.Point(332, 3);
             this.timeEA.Name = "timeEA";
             this.timeEA.ShowUpDown = true;
-            this.timeEA.Size = new System.Drawing.Size(100, 21);
+            this.timeEA.Size = new System.Drawing.Size(100, 20);
             this.timeEA.TabIndex = 70;
             // 
             // timeSAS
@@ -548,7 +565,7 @@ namespace SchoolManagementSystem.Class
             this.timeSAS.Location = new System.Drawing.Point(104, 3);
             this.timeSAS.Name = "timeSAS";
             this.timeSAS.ShowUpDown = true;
-            this.timeSAS.Size = new System.Drawing.Size(100, 21);
+            this.timeSAS.Size = new System.Drawing.Size(100, 20);
             this.timeSAS.TabIndex = 70;
             // 
             // btnEditSlot
@@ -575,7 +592,7 @@ namespace SchoolManagementSystem.Class
             // 
             this.txtlectime.Location = new System.Drawing.Point(350, 58);
             this.txtlectime.Name = "txtlectime";
-            this.txtlectime.Size = new System.Drawing.Size(82, 21);
+            this.txtlectime.Size = new System.Drawing.Size(82, 20);
             this.txtlectime.TabIndex = 34;
             // 
             // label1
@@ -583,7 +600,7 @@ namespace SchoolManagementSystem.Class
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(226, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 33;
             this.label1.Text = "One Lecture time";
             // 
@@ -591,7 +608,7 @@ namespace SchoolManagementSystem.Class
             // 
             this.txtLectures.Location = new System.Drawing.Point(104, 60);
             this.txtLectures.Name = "txtLectures";
-            this.txtLectures.Size = new System.Drawing.Size(100, 21);
+            this.txtLectures.Size = new System.Drawing.Size(100, 20);
             this.txtLectures.TabIndex = 25;
             // 
             // label7
@@ -608,7 +625,7 @@ namespace SchoolManagementSystem.Class
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "Start Break";
             // 
@@ -617,7 +634,7 @@ namespace SchoolManagementSystem.Class
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(242, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "End Break";
             // 
@@ -626,7 +643,7 @@ namespace SchoolManagementSystem.Class
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Start Assembly";
             // 
@@ -638,6 +655,24 @@ namespace SchoolManagementSystem.Class
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "End Assembly";
+            // 
+            // chkAssemblyTime
+            // 
+            this.chkAssemblyTime.Location = new System.Drawing.Point(6, 19);
+            this.chkAssemblyTime.Name = "chkAssemblyTime";
+            this.chkAssemblyTime.Size = new System.Drawing.Size(160, 24);
+            this.chkAssemblyTime.TabIndex = 0;
+            this.chkAssemblyTime.Text = "Enable Assembly Time";
+            this.chkAssemblyTime.CheckedChanged += new System.EventHandler(this.chkAssemblyTime_CheckedChanged);
+            // 
+            // chkBreakTime
+            // 
+            this.chkBreakTime.Location = new System.Drawing.Point(172, 19);
+            this.chkBreakTime.Name = "chkBreakTime";
+            this.chkBreakTime.Size = new System.Drawing.Size(143, 24);
+            this.chkBreakTime.TabIndex = 1;
+            this.chkBreakTime.Text = "Enable Break Time";
+            this.chkBreakTime.CheckedChanged += new System.EventHandler(this.chkBreakTime_CheckedChanged);
             // 
             // ScheduleTiming
             // 
@@ -735,5 +770,15 @@ namespace SchoolManagementSystem.Class
         private SimpleButton btnTimeTableSlots;
         private SimpleButton btnEditSlot;
         private SimpleButton btn_load_tt;
+        private System.Windows.Forms.CheckBox chkAssemblyTime;
+        private System.Windows.Forms.Label assemblyTimeLabel;
+        private System.Windows.Forms.DateTimePicker assemblyTimePicker;
+        private System.Windows.Forms.CheckBox chkBreakTime;
+        private System.Windows.Forms.Label breakTimeLabel;
+        private System.Windows.Forms.DateTimePicker breakTimePicker;
+
+
+
+
     }
 }

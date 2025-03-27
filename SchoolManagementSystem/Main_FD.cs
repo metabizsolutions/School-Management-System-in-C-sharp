@@ -638,8 +638,8 @@ namespace SchoolManagementSystem
         }
         void load_about_us()
         {
-            about_softpitch abtus = new about_softpitch(this);
-            LoadModule("About Us", abtus, accordionAbout);
+            //about_softpitch abtus = new about_softpitch(this);
+            //LoadModule("About Us", abtus, accordionAbout);
         }
         string search = "`key`";
         string tabname = "";
