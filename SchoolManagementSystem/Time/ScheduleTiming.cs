@@ -222,6 +222,8 @@ namespace SchoolManagementSystem.Class
             gridView1.OptionsView.RowAutoHeight = true;
             gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             gridView1.RowHeight = 35;
+          
+
         }
         private void btnClose_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -476,7 +478,7 @@ namespace SchoolManagementSystem.Class
 
             gridView1.SetRowCellValue(rownum, colCaption, GridSubject.Text + " ( " + GridTeacher.Text + " ) ");
             empty();
-            //MessageBox.Show("Slot Added Successfully!");
+            MessageBox.Show("Slot Added Successfully!");
         }
 
         private void btnReportPrint_Click(object sender, EventArgs e)
@@ -643,23 +645,32 @@ namespace SchoolManagementSystem.Class
         {
             if (txtLectures.Text == "")
             {
-                MessageBox.Show("Please provied total lectures", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please provide total lectures", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtlectime.Text == "")
             {
-                MessageBox.Show("Please provied one lecture total time", "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please provide one lecture total time", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             fun.loaderform(() =>
             {
                 string query = "TRUNCATE time_table_slot";
                 fun.Execute_Query(query);
-                query = "INSERT INTO time_table_slot(slot_type ,slot, Slot_Start_Time, Slot_End_Time) VALUES ('Assembly','" + timeSAS.Value.ToString("hh:mm tt") + "-" + timeEA.Value.ToString("hh:mm tt") + "','" + timeSAS.Value.ToString("hh:mm tt") + "','" + timeEA.Value.ToString("hh:mm tt") + "')";
-                fun.Execute_Query(query);
+
+                // **Only insert Assembly slot if checkbox is checked**
+                if (chkAssemblyTime.Checked)
+                {
+                    query = "INSERT INTO time_table_slot(slot_type ,slot, Slot_Start_Time, Slot_End_Time) " +
+                            "VALUES ('Assembly','" + timeSAS.Value.ToString("hh:mm tt") + "-" + timeEA.Value.ToString("hh:mm tt") + "'," +
+                            "'" + timeSAS.Value.ToString("hh:mm tt") + "','" + timeEA.Value.ToString("hh:mm tt") + "')";
+                    fun.Execute_Query(query);
+                }
+
                 int lecturetime = Convert.ToInt32(txtlectime.Text);
                 DateTime LectureStarttime = timeSAS.Value;
-                DateTime Lectureendtime = LectureStarttime.AddMinutes(lecturetime);//timeEA.Time.AddMinutes(lecturetime);
+                DateTime Lectureendtime = LectureStarttime.AddMinutes(lecturetime);
+
                 for (int i = 0; i < Convert.ToInt32(txtLectures.Text); i++)
                 {
                     if (i == 0)
@@ -674,20 +685,29 @@ namespace SchoolManagementSystem.Class
 
                         if (LectureStarttime.ToString("hh:mm tt") == timeSB.Value.ToString("hh:mm tt"))
                         {
-                            query = "INSERT INTO time_table_slot(slot_type,slot, Slot_Start_Time, Slot_End_Time) VALUES ('Break','" + timeSB.Value.ToString("hh:mm tt") + "-" + timeEB.Value.ToString("hh:mm tt") + "','" + timeSB.Value.ToString("hh:mm tt") + "','" + timeEB.Value.ToString("hh:mm tt") + "')";
-                            fun.Execute_Query(query);
+                            // **Only insert Break slot if checkbox is checked**
+                            if (chkBreakTime.Checked)
+                            {
+                                query = "INSERT INTO time_table_slot(slot_type,slot, Slot_Start_Time, Slot_End_Time) " +
+                                        "VALUES ('Break','" + timeSB.Value.ToString("hh:mm tt") + "-" + timeEB.Value.ToString("hh:mm tt") + "'," +
+                                        "'" + timeSB.Value.ToString("hh:mm tt") + "','" + timeEB.Value.ToString("hh:mm tt") + "')";
+                                fun.Execute_Query(query);
+                            }
 
                             LectureStarttime = timeEB.Value;
                             Lectureendtime = LectureStarttime.AddMinutes(lecturetime);
                         }
                     }
-                    query = "INSERT INTO time_table_slot(slot_type,slot, Slot_Start_Time, Slot_End_Time) VALUES ('Slot(" + (i + 1).ToString() + ")','" + LectureStarttime.ToString("hh:mm tt") + "-" + Lectureendtime.ToString("hh:mm tt") + "','" + LectureStarttime.ToString("hh:mm tt") + "','" + Lectureendtime.ToString("hh:mm tt") + "')";
+                    query = "INSERT INTO time_table_slot(slot_type,slot, Slot_Start_Time, Slot_End_Time) " +
+                            "VALUES ('Slot(" + (i + 1).ToString() + ")','" + LectureStarttime.ToString("hh:mm tt") + "-" + Lectureendtime.ToString("hh:mm tt") + "'," +
+                            "'" + LectureStarttime.ToString("hh:mm tt") + "','" + Lectureendtime.ToString("hh:mm tt") + "')";
                     fun.Execute_Query(query);
                 }
 
-                timetableList();
+                timetableList(); // Refresh timetable
             });
         }
+
 
         private void btnEditSlot_Click(object sender, EventArgs e)
         {
