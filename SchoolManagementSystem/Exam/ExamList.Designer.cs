@@ -42,14 +42,14 @@
             this.txtComment = new DevExpress.XtraEditors.TextEdit();
             this.txtDate = new DevExpress.XtraEditors.DateEdit();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridExamList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +117,7 @@
             // 
             this.labelControl9.Location = new System.Drawing.Point(317, 23);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(45, 13);
+            this.labelControl9.Size = new System.Drawing.Size(44, 13);
             this.labelControl9.TabIndex = 53;
             this.labelControl9.Text = "Comment";
             // 
@@ -140,7 +140,7 @@
             // 
             this.labelControl7.Location = new System.Drawing.Point(5, 23);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(27, 13);
+            this.labelControl7.Size = new System.Drawing.Size(28, 13);
             this.labelControl7.TabIndex = 49;
             this.labelControl7.Text = "Name";
             // 
@@ -153,11 +153,16 @@
             // 
             // txtDate
             // 
-            this.txtDate.EditValue = null;
             this.txtDate.Location = new System.Drawing.Point(161, 42);
             this.txtDate.Name = "txtDate";
+            // 
+            // 
+            // 
             this.txtDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            // 
+            // 
+            // 
             this.txtDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDate.Properties.Mask.EditMask = "";
@@ -165,10 +170,21 @@
             this.txtDate.Size = new System.Drawing.Size(150, 20);
             this.txtDate.TabIndex = 52;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(682, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "DateSheet";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ExamList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gridExamList);
             this.Controls.Add(this.groupControl1);
             this.Name = "ExamList";
@@ -176,8 +192,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridExamList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDate.Properties.CalendarTimeProperties)).EndInit();
@@ -201,5 +215,6 @@
         private DevExpress.XtraEditors.TextEdit txtComment;
         private DevExpress.XtraEditors.DateEdit txtDate;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }

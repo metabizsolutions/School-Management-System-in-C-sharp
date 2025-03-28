@@ -684,6 +684,12 @@
     <Compile Include="Dashboard\main_deshboard.Designer.cs">
       <DependentUpon>main_deshboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datesheet\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datesheet\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Discipline\.Designer - Copy.cs">
       <DependentUpon>ActivityStudent.cs</DependentUpon>
       <SubType>UserControl</SubType>

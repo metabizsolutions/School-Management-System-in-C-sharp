@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
 using MySql.Data.MySqlClient;
+using SchoolManagementSystem.Datesheet;
 using System;
 using System.Data;
 using System.Media;
@@ -159,5 +160,16 @@ namespace SchoolManagementSystem.Exam
                 MessageBox.Show(ex.Message, "Info");
             }
         }
+
+
+    
+
+            private void button1_Click(object sender, EventArgs e)
+            {
+                Form1 form1 = new Form1();
+                form1.Show(); 
+            }
+        }
     }
-}
+
+
