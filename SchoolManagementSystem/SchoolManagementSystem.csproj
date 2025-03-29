@@ -1823,6 +1823,9 @@
     <EmbeddedResource Include="Dashboard\main_deshboard.resx">
       <DependentUpon>main_deshboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Datesheet\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Discipline\ActivityStudent.resx">
       <DependentUpon>ActivityStudent.cs</DependentUpon>
     </EmbeddedResource>

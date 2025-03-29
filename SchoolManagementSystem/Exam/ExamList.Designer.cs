@@ -43,6 +43,7 @@
             this.txtDate = new DevExpress.XtraEditors.DateEdit();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridExamList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -153,6 +154,7 @@
             // 
             // txtDate
             // 
+            this.txtDate.EditValue = new System.DateTime(2025, 3, 29, 0, 0, 0, 0);
             this.txtDate.Location = new System.Drawing.Point(161, 42);
             this.txtDate.Name = "txtDate";
             // 
@@ -172,18 +174,28 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 43);
+            this.button1.Location = new System.Drawing.Point(623, 40);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(115, 23);
             this.button1.TabIndex = 6;
-            this.button1.Text = "DateSheet";
+            this.button1.Text = "Create DateSheet";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(744, 40);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "View DateSheet";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // ExamList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gridExamList);
             this.Controls.Add(this.groupControl1);
@@ -216,5 +228,6 @@
         private DevExpress.XtraEditors.DateEdit txtDate;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
